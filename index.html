@@ -12,14 +12,15 @@
 <body>
   <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
     <div class = "gradient">
-    <h1>Weather Dashboard</h1>
+    <h1 class="weather-header-txt">Weather Dashboard</h1>
     </div>
   </header>
 
   <!-- max-width for ultra wide resolutions -->
-  <div class="container-fluid" style="max-width: 1400px">
+   <div class="container-fluid" style="max-width: 1400px">
     <div class="row">
-      <aside class="col-lg-3 pb-3">
+      <aside class="col-lg-3 pb-3"> 
+        <div class="search-section">
         <h2 id="form-heading" class="mt-1 h3 form-label">
           Search for a City:
         </h2>
@@ -31,7 +32,7 @@
               <div class="input-group-append">
                 <button 
                 
-                 class="btn search-button" id="search-button" aria-label="submit search">
+                 class="btn search-button"  id="search-button" aria-label="submit search">
                   Search
                 </button>
                 <hr class="hr weather-hr" />
@@ -49,11 +50,41 @@
     </div>
   </div>
 <h1 id="city-name"></h1>
-  <!-- Section for testing functionality of API  -->
+<h2 id="temperature"></h2>
+
+
+<div class="container-days">
+  <div class="day">
+    <h2 id="day-1-date"></h2>
+    <h2 id="day-1-temp"></h2>
+    <h2 id="day-1-wind"></h2>
+    <h2 id="day-1-humid"></h2>
+  </div>
+  <div class="day">
+    <h2 id="day-2-date"></h2>
+    <h2 id="day-2-temp"></h2>
+    <h2 id="day-2-wind"></h2>
+    <h2 id="day-2-humid"></h2>
+  </div>
+  <div class="day">
+  <h2 id="day-3-date"></h2>
+  <h2 id="day-3-temp"></h2>
+  <h2 id="day-3-wind"></h2>
+  <h2 id="day-3-humid"></h2>
+ </div>
+ <div class="day">
+  <h2 id="day-4-date"></h2>
+  <h2 id="day-4-temp"></h2>
+  <h2 id="day-4-wind"></h2>
+  <h2 id="day-4-humid"></h2>
+ </div>
+
+</div>
+  <!-- Section for testing functionality of API 
   <div style="margin-top: 20px; padding: 20px; background-color: #f0f0f0;">
     <h2>Testing Section</h2>
     <button type="button" onclick="testWeather()">Test Weather Function</button>
-  </div>
+  </div> -->
   
 <!-- Day.js -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>

@@ -1,4 +1,7 @@
 // Place API key within the function for checking weather
+var searchBtn = document.getElementById("search-button")
+searchBtn.addEventListener('click', checkWeather)
+
 function checkWeather(event) {
 event.preventDefault()
      // OpenWeatherMap API key
@@ -23,7 +26,7 @@ event.preventDefault()
         // Display the current date using Day.js
         const currentDate = dayjs();
         const formattedDate = currentDate.format('MMMM DD, YYYY');
-        document.querySelector('.weather-header h1').textContent = 'Weather Dashboard - ' + formattedDate;
+        document.querySelector('.weather-header-txt').textContent = 'Weather Dashboard - ' + formattedDate;
   
         // Now you can use the data from the API to display other weather information
         // For example:
@@ -36,6 +39,38 @@ event.preventDefault()
         document.getElementById('city-name').textContent = 'City: ' + cityName;
         document.getElementById('temperature').textContent = 'Temperature: ' + temperature + '°C';
         
+        const dayOneDate = data.list[1].dt_txt
+        document.getElementById('day-1-date').textContent = 'Date: ' + dayOneDate;
+        const dayOneTemp = data.list[1].main.temp
+        document.getElementById('day-1-temp').textContent = 'Temp: ' + dayOneTemp;
+        const dayOneWind = data.list[1].wind.speed
+        document.getElementById('day-1-wind').textContent = 'Windspeed: ' + dayOneWind;
+        const dayOneHumidity = data.list[1].main.humidity
+        document.getElementById('day-1-humid').textContent = 'Humidity: ' + dayOneHumidity;
+
+        const dayTwoDate = data.list[2].dt_txt
+        document.getElementById('day-2-date').textContent = 'Date: ' + dayTwoDate;
+        const dayTwoTemp = data.list[2].main.temp
+        document.getElementById('day-2-temp').textContent = 'Temp: ' + dayTwoTemp;
+        const dayTwoWind = data.list[2].wind.speed
+        document.getElementById('day-2-wind').textContent = 'Windspeed: ' + dayTwoWind;
+        const dayTwoHumidity = data.list[2].main.humidity
+        document.getElementById('day-2-humid').textContent = 'Humidity: ' + dayTwoHumidity;
+
+        const dayThreeDate = data.list[3].dt_txt
+        document.getElementById('day-3-date').textContent = 'Date: ' + dayThreeDate;
+        const dayThreeTemp = data.list[2].main.temp
+        document.getElementById('day-3-temp').textContent = 'Temp: ' + dayThreeTemp;
+        const dayThreeWind = data.list[2].wind.speed
+        document.getElementById('day-3-wind').textContent = 'Windspeed: ' + dayThreeWind;
+        const dayThreeHumidity = data.list[2].main.humidity
+        document.getElementById('day-3-humid').textContent = 'Humidity: ' + dayThreeHumidity;
+
+
+
+
+
+
         // Continue updating other parts of your HTML based on the data from the API
       })
       .catch(function(error) {
